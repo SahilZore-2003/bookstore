@@ -1,0 +1,24 @@
+.checkout-loader {
+    position: fixed;
+    background-color: white;
+    inset: 0;
+    z-index: 10000;
+
+    &::before {
+        content: '';
+        height: 5px;
+        width: 20%;
+        background-color: var(--primary);
+        position: absolute;
+        top: 0;
+        left: -20%;
+        animation: checkout 1s ease-in-out infinite;
+    }
+
+    @keyframes checkout {
+        to{
+            left: 100%;
+        }
+    }
+
+}

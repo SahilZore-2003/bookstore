@@ -1,0 +1,135 @@
+.book-detail {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 2rem 5% 3rem;
+    min-height: 80vh;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-around;
+
+    @media (max-width:800px) {
+        flex-direction: column;
+        gap: 3rem;
+    }
+
+    .left,
+    .right {
+        flex-basis: 45%;
+
+        @media (max-width:800px) {
+            flex-basis: 100%;
+        }
+    }
+
+    .left {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        @media (max-width:800px) {
+            width: 100%;
+        }
+
+        img {
+            width: 300px;
+            height: auto;
+            object-fit: cover;
+            border-radius: 10px;
+            box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+        }
+    }
+
+    .right {
+
+        h2 {
+            color: #767677;
+            font-weight: 500;
+            padding-bottom: .3rem;
+        }
+
+        small {
+            color: #767677;
+        }
+
+        .rating {
+
+            margin: .3rem 0;
+
+            .gold {
+                fill: gold;
+            }
+
+            .gray {
+                fill: #d2d4d9;
+            }
+        }
+
+        .desc {
+            padding: .3rem 0;
+            font-size: .9rem;
+            color: #767677;
+        }
+
+        table {
+            margin: 1rem 0;
+            border-collapse: collapse;
+
+
+            tr {
+
+                border-bottom: .2px solid #767677;
+
+                .price {
+                    font-size: 1.3rem;
+                }
+
+                th {
+                    text-align: start;
+                    width: 80px;
+                    padding-block: 8px;
+                    font-weight: 500;
+                    text-transform: capitalize;
+                }
+
+                td {
+                    padding-block: 8px;
+                }
+
+                .genres {
+                    display: flex;
+                    flex-wrap: wrap;
+                    gap: 10px;
+                }
+
+                span {
+                    display: inline-block;
+                    background: var(--primary);
+                    padding: 5px 10px;
+                    color: white;
+                    border-radius: 10px;
+                }
+            }
+        }
+
+        button {
+            background: transparent;
+            color: var(--primary);
+            border-radius: 30px;
+            border: 2px solid var(--primary);
+            font-size: 1rem;
+
+            &:hover {
+                background: var(--primary);
+                color: white;
+                transition: .3s linear;
+            }
+
+            &:disabled{
+                background-color: #767677;
+                border: none;
+                color: white;
+                cursor: not-allowed;
+            }
+        }
+    }
+}

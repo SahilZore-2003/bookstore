@@ -1,0 +1,80 @@
+nav {
+    padding: .5rem 5%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: 0px 2px 3px #5fdce0;
+    position: sticky;
+    top: 0;
+    background-color: white;
+    z-index: 10;
+
+    .logo {
+        img {
+            width: 50px !important;
+            height: 50px !important;
+            object-fit: contain;
+        }
+    }
+
+    .links {
+        flex: 1;
+        text-align: center;
+
+        @media (max-width:600px) {
+            display: none;
+        }
+
+        a {
+            color: var(--gray);
+            text-decoration: none;
+            margin: 0 .5rem;
+
+            &:hover {
+                color: var(--primary);
+                font-weight: 500;
+            }
+        }
+    }
+
+    .icons {
+        display: flex;
+        gap: 1rem;
+        align-items: center;
+        cursor: pointer;
+
+        @media (max-width:600px){
+            .addbookbtn{
+                display: none;
+            }
+        }
+
+        .carthaveitems{
+            fill: var(--primary);
+        }
+
+        button {
+            font-size: 1rem;
+            padding: 5px 15px;
+            border-radius: 10px;
+        }
+
+        svg {
+            font-size: 1.2rem;
+            transition: .2s ease-in;
+
+            &:hover {
+                fill: var(--primary);
+                transform: scale(1.2);
+            }
+        }
+
+        .baricon {
+            display: none;
+
+            @media(max-width:600px) {
+                display: inline-block;
+            }
+        }
+    }
+}

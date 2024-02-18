@@ -1,0 +1,58 @@
+.book {
+    min-width: 200px;
+    text-align: center;
+    border: 1px solid var(--gray);
+    padding: .5rem 1.5rem;
+    border-radius: 10px;
+    cursor: pointer;
+
+    small {
+        color: var(--gray);
+    }
+
+    img {
+        object-fit: contain;
+        height: 200px;
+    }
+
+    h3 {
+        font-weight: 500;
+        margin-top: 10px;
+    }
+
+    .genres {
+        small {
+            color: var(--primary);
+        }
+    }
+
+    b {
+        display: inline-block;
+        margin: .3rem 0;
+    }
+
+    button {
+        margin-top: .3rem;
+        background-color: white;
+        color: var(--primary);
+        border: 2px solid var(--primary);
+        font-size: .9rem;
+        padding: 5px 10px;
+
+        &:disabled {
+            background-color: var(--gray);
+            color: white;
+            border: none;
+
+            &:hover {
+                cursor: not-allowed;
+                background-color: var(--gray);
+            }
+        }
+
+        &:hover {
+            background: var(--primary);
+            color: white;
+        }
+    }
+}

@@ -1,0 +1,72 @@
+.arrivals {
+    padding: 0 5%;
+
+    >h1 {
+        font-size: 2.5rem;
+    }
+
+    .container {
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+        gap: 2rem 1.5rem;
+        margin: 3rem 0;
+
+        @media (max-width:1000px) {
+            grid-template-columns: repeat(3, 1fr);
+        }
+
+        @media (max-width:700px) {
+            grid-template-columns: repeat(2, 1fr);
+        }
+
+        @media (max-width:500px) {
+            grid-template-columns: repeat(1, 1fr);
+        }
+
+        .arrival-book {
+            padding: .5rem 2rem;
+            border: 2px solid var(--gray);
+            text-align: center;
+            transition: .2s linear;
+
+            &:hover {
+                border: 2px solid var(--primary);
+                cursor: pointer;
+            }
+
+            .img-con {
+                overflow: hidden;
+
+                img {
+                    min-height: 200px;
+                    object-fit: cover;
+                    transition: .3s linear;
+
+                    &:hover {
+                        transform: scale(1.2);
+                    }
+                }
+            }
+
+            h3 {
+                padding: .3rem 0;
+            }
+
+            button {
+                padding: 5px 10px;
+                font-size: .9rem;
+                margin-top: .5rem;
+            }
+
+            .rating {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+
+                svg {
+                    fill: var(--primary);
+                }
+            }
+        }
+    }
+}

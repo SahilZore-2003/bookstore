@@ -1,0 +1,128 @@
+footer {
+    margin-top: 2rem;
+    background-color: #dcdcdc;
+    padding: 2rem 5% 3rem;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 0 1rem;
+
+    @media (max-width:1000px) {
+        grid-template-columns: repeat(3, 1fr);
+        row-gap: 3rem;
+    }
+
+    @media (max-width:700px) {
+        grid-template-columns: repeat(2, 1fr);
+        column-gap: 3rem;
+    }
+
+    @media (max-width:500px) {
+        grid-template-columns: repeat(1, 1fr);
+        column-gap: 3rem;
+    }
+
+
+    h3 {
+        font-size: 1.5rem;
+        font-weight: bold;
+    }
+
+    .contact {
+        >div {
+            margin-top: 1rem;
+
+            div {
+                display: flex;
+                align-items: center;
+                margin-top: 8px;
+                gap: 10px;
+
+                span {
+                    font-size: .9rem;
+                }
+            }
+        }
+    }
+
+    .socials {
+        div {
+            margin-top: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+
+            svg {
+                font-size: 1.2rem;
+                transition: .2s linear;
+                cursor: pointer;
+
+                &:hover {
+                    fill: var(--primary);
+                }
+            }
+        }
+    }
+
+    .links {
+
+        div {
+            margin-top: 1rem;
+        }
+
+        a {
+            display: block;
+            color: black;
+            transition: .2s linear;
+            margin-top: 6px;
+
+            &:hover {
+                transform: translateX(10px);
+                color: var(--primary);
+            }
+        }
+    }
+
+    .logo {
+        img {
+            width: 50px;
+            height: 50px;
+            object-fit: contain;
+        }
+
+        p {
+            font-size: .8rem;
+        }
+    }
+
+    div {
+        input {
+            background-color: var(--gray);
+            border-radius: 20px;
+            border: none;
+            outline: none;
+            padding: 10px;
+            color: white;
+
+            @media (max-width:500px) {
+                width: 100%;
+                max-width: 400px;
+            }
+
+            &::placeholder {
+                color: white;
+            }
+        }
+
+        button {
+            padding: 10px;
+            font-size: .8rem;
+            border-radius: 20px;
+        }
+    }
+
+    .newsletter {
+        input {
+            margin: .5rem 0;
+        }
+    }
+}

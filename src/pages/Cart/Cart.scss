@@ -1,0 +1,155 @@
+.empty-cart {
+    min-height: 80vh;
+    display: grid;
+    place-items: center;
+
+    h2 {
+        // color: #ab89bf;
+        color: #ab89bf;
+        margin: 1rem;
+        font-weight: 400;
+    }
+
+    img {
+        width: 250px;
+        height: 250px;
+    }
+
+    a {
+        background-color: #ab89bf;
+        color: white;
+        padding: 10px 20px;
+        border-radius: 10px;
+    }
+}
+
+.cart {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 2rem 5% 3rem;
+    text-align: center;
+
+    .grid {
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+        align-items: center;
+
+        @media (max-width:800px) {
+            grid-template-columns: repeat(3, 1fr);
+
+        }
+    }
+
+    .heading {
+        padding-bottom: 1rem;
+        border-bottom: .3px solid var(--gray);
+
+        @media (max-width:800px) {
+            display: none;
+
+        }
+    }
+
+    .data {
+        padding: 1rem 0;
+        border-bottom: .5px solid var(--gray);
+        position: relative;
+
+        img {
+            width: 50px;
+            height: 50px;
+            object-fit: contain;
+            border-radius: 10px;
+        }
+
+        @media (max-width:800px) {
+            .book-info {
+                text-align: start;
+            }
+
+        }
+
+        .qnt {
+            display: flex;
+            align-items: stretch;
+            justify-content: space-around;
+            border: 1px solid var(--primary);
+
+            @media (max-width:800px) {
+                grid-row: span 2;
+
+            }
+
+            button {
+                font-size: .8rem;
+
+                @media (max-width:500px) {
+                    padding: 10px;
+
+                }
+            }
+
+            span {
+                flex-grow: 1;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                font-size: 1.2rem;
+            }
+        }
+
+        .delete {
+
+            @media (max-width:800px) {
+                position: absolute;
+                right: 0;
+                top: 0px;
+
+            }
+
+            cursor: pointer;
+
+            svg {
+                transition: rotate .2s linear;
+                border: 1px solid var(--primary);
+                font-size: 2rem;
+                padding: .6rem;
+            }
+        }
+    }
+
+    .bill {
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        padding: 1rem 0;
+        gap: 1rem;
+
+        div {
+            span {
+                font-size: .8rem;
+            }
+
+            width: 150px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            border: .5px solid var(--gray);
+            padding: 10px 20px;
+        }
+    }
+
+    .buy {
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+
+        button {
+            width: 150px;
+
+            &:disabled{
+                background: var(--gray);
+            }
+        }
+    }
+}
