@@ -1,0 +1,68 @@
+.orders {
+    padding: 2rem 5%;
+
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        // overflow: hidden;
+        border-radius: 10px;
+        max-width: 1000px;
+        margin: 0 auto;
+        border: 1px solid var(--primary);
+        position: relative;
+
+        max-height: 500px;
+
+        thead {
+            background: var(--primary);
+
+            th {
+                color: white;
+                text-align: start;
+            }
+        }
+
+        tr,
+        th,
+        td {
+            padding: .8rem 1rem;
+        }
+
+        tbody {
+
+            tr {
+                border-bottom: .8px solid var(--primary);
+            }
+
+            tr:nth-child(even) {
+                background-color: #eae6e6ac;
+            }
+
+            &:last-child {
+                border-bottom: 2px solid var(--primary);
+            }
+
+        }
+    }
+
+    @media (max-width:850px) {
+        table {
+
+            font-size: 1rem;
+
+            thead {
+                display: none;
+            }
+
+            td {
+                display: grid;
+                grid-template-columns: 1fr 2fr;
+
+                &::before {
+                    content: attr(data-cell) ":";
+                    font-weight: 500;
+                }
+            }
+        }
+    }
+}

@@ -4,6 +4,7 @@ import Signup from "./pages/Signup/Signup"
 import Login from "./pages/Login/Login"
 import Cart from "./pages/Cart/Cart"
 import { Navbar, Footer, AddBook, BookDetail, OrderConfirm } from "./components"
+import Orders from "./pages/Orders/Orders"
 
 
 function App() {
@@ -20,6 +21,7 @@ function App() {
         <Route path="/bookdetail/:id" element={<BookDetail />} />
         <Route path="/cart" element={<Cart />} />
         <Route path="/confirm" element={<OrderConfirm />} />
+        <Route path="/orders" element={<Orders />} />
       </Routes>
       <Footer />
     </>

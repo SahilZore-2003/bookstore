@@ -104,7 +104,7 @@ const Cart = () => {
                         {
                             bookCart.map((e) => {
                                 return (
-                                    <div className="data grid">
+                                    <div className="data grid" key={e.id}>
                                         <div>
                                             <img src={e.image || no_img} alt="" />
                                         </div>

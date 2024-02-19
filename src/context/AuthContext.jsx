@@ -1,7 +1,7 @@
 import { createContext, useContext, useState, useEffect } from "react";
 import toast, { Toaster } from "react-hot-toast"
 import { initializeApp } from "firebase/app";
-import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, GoogleAuthProvider, signInWithPopup, onAuthStateChanged, signOut } from "firebase/auth";
+import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, GoogleAuthProvider, onAuthStateChanged, signOut } from "firebase/auth";
 import { getDatabase, set, ref } from "firebase/database"
 import { useNavigate } from "react-router-dom"
 const AuthContext = createContext(null)
@@ -66,9 +66,9 @@ export const AuthContextProvider = ({ children }) => {
         return signInWithEmailAndPassword(auth, email, password)
     }
 
-    const signWithGoogle = () => {
-        return signInWithPopup(auth, googleProvider)
-    }
+    // const signWithGoogle = () => {
+    //     return signInWithPopup(auth, googleProvider)
+    // }
 
     const userSignOut = () => {
         return signOut(auth)
@@ -104,11 +104,15 @@ export const AuthContextProvider = ({ children }) => {
         return result;
     }
 
+    const getAllOrers = async ()=>{
+        return getDocs(collection(store, "orders"))
+    }
+
 
 
 
     return (
-        <AuthContext.Provider value={{ signUpUserWithEmailandPassword, putData, signing, signWithGoogle, toast, Toaster, navigate, isLoggedIn, userSignOut, addNewBook, getAllBooks, getImageUrl, getBookById, bookCart, setBookCart, user, Timestamp, addOrders }}>
+        <AuthContext.Provider value={{ signUpUserWithEmailandPassword, putData, signing, toast, Toaster, navigate, isLoggedIn, userSignOut, addNewBook, getAllBooks, getImageUrl, getBookById, bookCart, setBookCart, user, Timestamp, addOrders,getAllOrers }}>
             {children}
         </AuthContext.Provider>
     )

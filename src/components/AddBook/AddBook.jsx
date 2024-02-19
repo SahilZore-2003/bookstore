@@ -15,7 +15,7 @@ const AddBook = () => {
     const [image, setImage] = useState([])
     const [selectedGenres, setSelectedGenres] = useState([])
     const [bookurl, setBookUrl] = useState("")
-    const [disabled,setDisabled] = useState(false)
+    const [disabled, setDisabled] = useState(false)
 
 
     const handleChange = (selectedList) => {
@@ -43,7 +43,7 @@ const AddBook = () => {
             setImage([])
         }).catch((e) => {
             toast.error("Something wents wrong!")
-        }).finally(()=>{
+        }).finally(() => {
             setDisabled(false)
         })
     }
@@ -78,7 +78,7 @@ const AddBook = () => {
                                 <div className='left'>
                                     <img src={bookurl} alt="" />
                                     <div>
-                                        <h4>{image[0].name.slice(0,15)}</h4>
+                                        <h4>{image[0].name.slice(0, 15)}</h4>
 
                                         <small>{(image[0].size / 1000).toFixed(1)}kb.</small>
                                     </div>

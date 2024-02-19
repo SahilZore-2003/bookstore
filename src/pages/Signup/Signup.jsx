@@ -13,10 +13,10 @@ import { FaEye, FaEyeSlash } from "react-icons/fa";
 
 const Signup = () => {
 
-  const { signUpUserWithEmailandPassword, toast, Toaster, signWithGoogle, navigate } = useFirebase();
+  const { signUpUserWithEmailandPassword, toast, Toaster, navigate } = useFirebase();
   const [showPassword, setShowPassword] = useState(false)
   const [submitDisabled, setSubmitDisabled] = useState(false)
-  
+
 
 
   const schema = yup.object().shape({
@@ -83,12 +83,6 @@ const Signup = () => {
           <small className='center'>Already have an account? <Link to={"/login"}>Login</Link></small>
           <hr />
         </form>
-        <button className="google" onClick={handleSignInWithGoogle}>
-          <div>
-            <img src={google} alt="" />
-            Sign Up With Google
-          </div>
-        </button>
         <small className='tc'>by signing up to create an account i accept company's <b>tearms of use and privacy policy.</b></small>
       </div>
     </div>

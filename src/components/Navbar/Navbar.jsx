@@ -8,6 +8,7 @@ import { FaBars } from "react-icons/fa6";
 import Sidebar from "../Sidebar/Sidebar"
 import { useFirebase } from "../../context/AuthContext"
 import { FiShoppingCart } from "react-icons/fi";
+import ProtectedRoute from '../ProtectedRoute/ProtectedRoute';
 
 const Navbar = () => {
     const [sidebar, showSideBar] = useState(false)
@@ -24,9 +25,14 @@ const Navbar = () => {
                     <a href={"#about"}>About</a>
                     <a href={"#books"}>Books</a>
                     <a href={"#arrivals"}>Arival</a>
+
+                    <ProtectedRoute><NavLink to={"/orders"}>Orders</NavLink></ProtectedRoute>
                 </div>
                 <div className="icons">
-                    <button className='addbookbtn' onClick={() => navigate("/addbook")}>Add Book</button>
+                    <ProtectedRoute>
+                        <button className='addbookbtn' onClick={() => navigate("/addbook")}>Add Book</button>
+                    </ProtectedRoute>
+
                     <button onClick={() => userSignOut()}>Logout</button>
                     {/* <IoSearch /> */}
                     <FiShoppingCart className={bookCart.length > 0 ? "carthaveitems" : ""} onClick={() => {
