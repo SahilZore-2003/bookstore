@@ -10,7 +10,7 @@ import { getStorage, ref as storageref, uploadBytes, getDownloadURL } from "fire
 
 
 const firebaseConfig = {
-    apiKey: "API_KEY",
+    apiKey: "AIzaSyDf5PilNTqbay8a1sOqi_VZUoYwombhCAw",
     authDomain: "database-51c58.firebaseapp.com",
     projectId: "database-51c58",
     storageBucket: "database-51c58.appspot.com",
